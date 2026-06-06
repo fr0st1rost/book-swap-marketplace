@@ -41,9 +41,9 @@ function Prelogin() {
             Continue as guest
           </Link>
           <div className="flex items-center justify-center gap-5 pt-3 text-muted-foreground">
-            <a href="#" aria-label="Instagram" className="rounded-full p-2 hover:text-primary"><Instagram className="h-5 w-5" /></a>
-            <a href="#" aria-label="Twitter" className="rounded-full p-2 hover:text-primary"><Twitter className="h-5 w-5" /></a>
-            <a href="#" aria-label="Facebook" className="rounded-full p-2 hover:text-primary"><Facebook className="h-5 w-5" /></a>
+            <a href="#" aria-label="Instagram" className="rounded-full p-2 hover:text-primary"><Globe className="h-5 w-5" /></a>
+            <a href="#" aria-label="Twitter" className="rounded-full p-2 hover:text-primary"><Send className="h-5 w-5" /></a>
+            <a href="#" aria-label="Facebook" className="rounded-full p-2 hover:text-primary"><Mail className="h-5 w-5" /></a>
           </div>
         </div>
       </div>
