@@ -9,38 +9,255 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TransactionsRouteImport } from './routes/transactions'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as MessagesRouteImport } from './routes/messages'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as HomeRouteImport } from './routes/home'
+import { Route as FavoritesRouteImport } from './routes/favorites'
+import { Route as EditProfileRouteImport } from './routes/edit-profile'
+import { Route as CatalogRouteImport } from './routes/catalog'
+import { Route as AddListingRouteImport } from './routes/add-listing'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BookIdRouteImport } from './routes/book.$id'
 
+const TransactionsRoute = TransactionsRouteImport.update({
+  id: '/transactions',
+  path: '/transactions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MessagesRoute = MessagesRouteImport.update({
+  id: '/messages',
+  path: '/messages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeRoute = HomeRouteImport.update({
+  id: '/home',
+  path: '/home',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritesRoute = FavoritesRouteImport.update({
+  id: '/favorites',
+  path: '/favorites',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EditProfileRoute = EditProfileRouteImport.update({
+  id: '/edit-profile',
+  path: '/edit-profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CatalogRoute = CatalogRouteImport.update({
+  id: '/catalog',
+  path: '/catalog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AddListingRoute = AddListingRouteImport.update({
+  id: '/add-listing',
+  path: '/add-listing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BookIdRoute = BookIdRouteImport.update({
+  id: '/book/$id',
+  path: '/book/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/add-listing': typeof AddListingRoute
+  '/catalog': typeof CatalogRoute
+  '/edit-profile': typeof EditProfileRoute
+  '/favorites': typeof FavoritesRoute
+  '/home': typeof HomeRoute
+  '/login': typeof LoginRoute
+  '/messages': typeof MessagesRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/transactions': typeof TransactionsRoute
+  '/book/$id': typeof BookIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/add-listing': typeof AddListingRoute
+  '/catalog': typeof CatalogRoute
+  '/edit-profile': typeof EditProfileRoute
+  '/favorites': typeof FavoritesRoute
+  '/home': typeof HomeRoute
+  '/login': typeof LoginRoute
+  '/messages': typeof MessagesRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/transactions': typeof TransactionsRoute
+  '/book/$id': typeof BookIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/add-listing': typeof AddListingRoute
+  '/catalog': typeof CatalogRoute
+  '/edit-profile': typeof EditProfileRoute
+  '/favorites': typeof FavoritesRoute
+  '/home': typeof HomeRoute
+  '/login': typeof LoginRoute
+  '/messages': typeof MessagesRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/transactions': typeof TransactionsRoute
+  '/book/$id': typeof BookIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/add-listing'
+    | '/catalog'
+    | '/edit-profile'
+    | '/favorites'
+    | '/home'
+    | '/login'
+    | '/messages'
+    | '/profile'
+    | '/register'
+    | '/transactions'
+    | '/book/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/add-listing'
+    | '/catalog'
+    | '/edit-profile'
+    | '/favorites'
+    | '/home'
+    | '/login'
+    | '/messages'
+    | '/profile'
+    | '/register'
+    | '/transactions'
+    | '/book/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/add-listing'
+    | '/catalog'
+    | '/edit-profile'
+    | '/favorites'
+    | '/home'
+    | '/login'
+    | '/messages'
+    | '/profile'
+    | '/register'
+    | '/transactions'
+    | '/book/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AddListingRoute: typeof AddListingRoute
+  CatalogRoute: typeof CatalogRoute
+  EditProfileRoute: typeof EditProfileRoute
+  FavoritesRoute: typeof FavoritesRoute
+  HomeRoute: typeof HomeRoute
+  LoginRoute: typeof LoginRoute
+  MessagesRoute: typeof MessagesRoute
+  ProfileRoute: typeof ProfileRoute
+  RegisterRoute: typeof RegisterRoute
+  TransactionsRoute: typeof TransactionsRoute
+  BookIdRoute: typeof BookIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/transactions': {
+      id: '/transactions'
+      path: '/transactions'
+      fullPath: '/transactions'
+      preLoaderRoute: typeof TransactionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/messages': {
+      id: '/messages'
+      path: '/messages'
+      fullPath: '/messages'
+      preLoaderRoute: typeof MessagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home': {
+      id: '/home'
+      path: '/home'
+      fullPath: '/home'
+      preLoaderRoute: typeof HomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favorites': {
+      id: '/favorites'
+      path: '/favorites'
+      fullPath: '/favorites'
+      preLoaderRoute: typeof FavoritesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/edit-profile': {
+      id: '/edit-profile'
+      path: '/edit-profile'
+      fullPath: '/edit-profile'
+      preLoaderRoute: typeof EditProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/catalog': {
+      id: '/catalog'
+      path: '/catalog'
+      fullPath: '/catalog'
+      preLoaderRoute: typeof CatalogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/add-listing': {
+      id: '/add-listing'
+      path: '/add-listing'
+      fullPath: '/add-listing'
+      preLoaderRoute: typeof AddListingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +265,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/book/$id': {
+      id: '/book/$id'
+      path: '/book/$id'
+      fullPath: '/book/$id'
+      preLoaderRoute: typeof BookIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AddListingRoute: AddListingRoute,
+  CatalogRoute: CatalogRoute,
+  EditProfileRoute: EditProfileRoute,
+  FavoritesRoute: FavoritesRoute,
+  HomeRoute: HomeRoute,
+  LoginRoute: LoginRoute,
+  MessagesRoute: MessagesRoute,
+  ProfileRoute: ProfileRoute,
+  RegisterRoute: RegisterRoute,
+  TransactionsRoute: TransactionsRoute,
+  BookIdRoute: BookIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
