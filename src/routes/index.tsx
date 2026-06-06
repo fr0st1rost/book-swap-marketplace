@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PhoneFrame } from "@/components/PhoneFrame";
 import { Logo } from "@/components/Logo";
-import { Instagram, Twitter, Facebook } from "lucide-react";
+import { Globe, Mail, Send } from "lucide-react";
 
 export const Route = createFileRoute("/")({ component: Prelogin });
 
