@@ -20,7 +20,7 @@ export function BottomNav() {
             return (
               <li key={to} className="flex items-center justify-center">
                 <Link
-                  to={to}
+                  to={to as any}
                   className="-mt-6 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[var(--shadow-float)] transition active:scale-95"
                   aria-label={label}
                 >
@@ -32,7 +32,7 @@ export function BottomNav() {
           return (
             <li key={to}>
               <Link
-                to={to}
+                to={to as any}
                 className={`flex flex-col items-center gap-1 rounded-lg px-2 py-1.5 text-[10px] font-medium transition ${
                   active ? "text-primary" : "text-muted-foreground"
                 }`}
